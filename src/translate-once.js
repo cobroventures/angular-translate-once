@@ -63,6 +63,10 @@
           translateValues = $parse(attrs.translateValues)(scope);
         }
 
+        if (!translationKey) {
+          return;
+        }
+
         // queue the translation
         $translate(translationKey, translateValues).then(function (translation) {
           // update the element with the translation
